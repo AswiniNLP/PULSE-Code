@@ -1,0 +1,95 @@
+{
+  "audit_date": "2026-11-24",
+  "python": "3.10.6",
+  "environment": "Isolated virtual environment reusing installed Torch dependencies; Hugging Face Hub overridden to 0.35.3; CUDA unavailable",
+  "package_versions": {
+    "torch": "2.8.0",
+    "transformers": "4.56.1",
+    "peft": "0.18.1",
+    "huggingface_hub": "0.35.3",
+    "tokenizers": "0.22.0",
+    "accelerate": "1.7.0"
+  },
+  "checks": {
+    "unit_tests": {
+      "passed": 34,
+      "failed": 0,
+      "skipped": 0
+    },
+    "ruff": "passed",
+    "python_compile": "passed",
+    "editable_package_install": "passed with setuptools 80.9.0",
+    "default_cpu_smoke": "passed: actual CLIs with random tiny GPT-2 and BERT",
+    "official_llada_smoke": "passed: actual CLIs with random tiny official LLaDA and BERT",
+    "packaged_llada_smoke_option": "passed: --llada-source-dir",
+    "cli_help_and_csv_validation": "passed",
+    "full_evaluator_orchestration": "passed with real Torch and mocked evaluator models"
+  },
+  "official_llada": {
+    "upstream": "GSAI-ML/LLaDA-8B-Instruct",
+    "revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+    "architecture": "official LLaDAModelLM, d_model=16, layers=1, heads=2, vocab=93, context=128",
+    "weights": "random local initialization; upstream model weights not downloaded",
+    "source_sha256": {
+      "configuration_llada.py": "c947a64d8b735affa69d5adeb416c83ce607c8925270884e4471ae11068e2bfe",
+      "modeling_llada.py": "98bac7e53fef0bb7ca01e3716c11a7f710d183e10dbb9783b88db9dbba2e3766"
+    },
+    "stages": [
+      {
+        "stage": "sslcl",
+        "exit_code": 0,
+        "optimizer_updates": 2
+      },
+      {
+        "stage": "sccg",
+        "exit_code": 0,
+        "optimizer_updates": 2
+      },
+      {
+        "stage": "reload_and_generate",
+        "exit_code": 0,
+        "optimizer_updates": null
+      },
+      {
+        "stage": "basic_evaluation",
+        "exit_code": 0,
+        "optimizer_updates": null
+      }
+    ],
+    "generation": {
+      "rows": 2,
+      "gen_length": 8,
+      "steps": 4,
+      "block_length": 4
+    },
+    "additional_sampling": {
+      "passed": true,
+      "temperature": 0.6,
+      "cfg_scale": 1.5,
+      "remasking": "random"
+    }
+  },
+  "not_verified": [
+    "Full-size 8B training/inference",
+    "Production CUDA and 4-bit loading",
+    "Actual full evaluator models and scores",
+    "Real dataset quality or research results",
+    "Hosted GitHub Actions",
+    "Fully fresh dependency installation"
+  ],
+  "file_sha256": {
+    "generate_vq.py": "64fd79014ca567f19856974cacd3089486c0235901a203593523f938e816c3af",
+    "metric.py": "878f48767463758cb427dd7d3cca981606df401885b5776507609c4d0654d58b",
+    "pulse_core.py": "cf5ef9c1ed05fa3fdc1bce35eaa6513a67daee8fbb0f65bd4e2793f363a8af0a",
+    "pulse_inference.py": "4044e6bb3697a4320a4df51de093f7c6206857d73977e99eb053d7ba796cf8a9",
+    "pulse_train.py": "f575558fc19d873f78c29b1ad25064065376cf31f73c6f5eb90b8c95ac8444e4",
+    "pyproject.toml": "4c454d618ec14bd9f1d0a81d30d1c62f9a8af6cd0e750fd032459600ce126c7d",
+    "scripts/check_environment.py": "74d5dbc55be3ebd13c4c6f16bb90f1fc3473b78d26b61f00a1f73bf4fe28bffb",
+    "scripts/smoke_pipeline.py": "e9166cdb99fe06dc5f37032a69757abea27048ae78c38a64bb44519b28c9e96c",
+    "tests/test_generation.py": "d741e8f05af596beac483f5d6cab57ea72192c8a382349bcc2d8efd128fe7458",
+    "tests/test_metrics.py": "ad74f688807a4553b4fe739251b1f2457b270f46d9a980bbb54f4b135959c9e0",
+    "tests/test_training.py": "a5ea148d802e2775c924f9c670278d62b31e2234bbf4a8a88c814144f702e8b9",
+    "examples/test.csv": "b20b2e6799f44d3d82bbaca6e2c77efb9f401ead98958e7404bc97f18e453192",
+    "examples/train.csv": "d61e50229d78cc325e26396774a89386eb7e539c6a6534819110ec7b5bbd930f"
+  }
+}

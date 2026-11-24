@@ -1,0 +1,5 @@
+id,Hatespeech,Style,Target,Counterspeech
+train-001,People from that community do not belong here.,Gandhi,community,Every person belongs in our shared community. Let us choose compassion and dialogue.
+train-002,People from that community do not belong here.,Mandela,community,We build a stronger community by standing together and respecting every person's dignity.
+train-003,Those newcomers should never have a voice.,Gandhi,newcomers,We can listen with patience and answer disagreement peacefully. Every voice deserves respect.
+train-004,Those newcomers should never have a voice.,Mandela,newcomers,Let us build a future where newcomers and longtime neighbors can all be heard.
