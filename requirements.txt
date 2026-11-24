@@ -1,0 +1,2 @@
+# Core training/inference environment. See pyproject.toml for exact versions.
+-e .

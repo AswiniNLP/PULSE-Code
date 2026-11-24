@@ -1,0 +1,2 @@
+# Full model-based evaluation in addition to the core environment.
+-e .[evaluation]
